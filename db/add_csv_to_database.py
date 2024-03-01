@@ -1,22 +1,14 @@
+# Lib imports
 import csv
 import sys
 import sqlite3
 from sqlite3 import Error
+# My imports
+sys.path.append('/home/gavin/study')
+from shared import *
 
 def get_filenames() -> [str]:
     return sys.argv[1:]
-
-def print_err(msg: str):
-    print("Error: " + msg)
-    print("Exiting")
-    exit(1)
-
-def get_db_connection():
-    try:
-        return sqlite3.connect('/home/gavin/study/db/study.sqlite')
-    except Exception as e:
-        print(e)
-        print_err('Error connecting to database')
 
 def add_files_to_db(filenames: [str]):
     for filename in filenames:
@@ -107,4 +99,6 @@ def gen_insert_sql(line: dict) -> str:
 def run():
     add_files_to_db(get_filenames())
 
-run()
+if(__name__ == '__main__'):
+    print('hi')
+    run()
