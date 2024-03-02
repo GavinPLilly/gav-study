@@ -100,5 +100,4 @@ def run():
     add_files_to_db(get_filenames())
 
 if(__name__ == '__main__'):
-    print('hi')
     run()
